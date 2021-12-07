@@ -1,0 +1,83 @@
+.card-title{
+  display:flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+mat-card-header{
+  display: flex!important;
+  align-items: flex-end!important;
+  justify-content: center!important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.shipping-card {
+  min-width: 120px;
+  margin: 20px auto;
+}
+
+.mat-radio-button {
+  display: block;
+  margin: 5px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+mat-radio-group{
+  display: flex;
+  justify-content: space-between;
+}
+p{
+  padding: .3rem;
+}
+.input{
+  padding-bottom: 0.3rem;
+  margin-left: 0.3rem;
+}
+.visibility{
+  cursor: pointer;
+}
+.suffix{
+  margin-left: 0.5rem;
+}
+.terms{
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+}
+.terms:hover{
+  text-decoration: revert;
+}
+mat-card-header{
+  display: flex!important;
+  align-items: flex-end!important;
+  justify-content: space-between;
+}
+
+mat-card-actions{
+  display: flex;
+  flex-direction: column;
+}
+.providers mat-icon{
+  margin: 0.4rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+mat-card{
+  max-width: 20rem;
+}
+

@@ -1,0 +1,37 @@
+<mat-card class="login-card">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="my-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <mat-label>Usuario</mat-label>
+        <!--          <label for="username"></label>-->
+        <input matInput id="username"  formControlName="username">
+        <mat-error
+          *ngIf="!!(hasError('username', 'required') &&
+              (getControl('username')?.dirty || getControl('username')?.touched))">
+          Campo Requerido
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <!--          <label for="password"></label>-->
+        <input matInput id="password" formControlName="password" type="password" >
+        <mat-error *ngIf="(getControl('password')?.dirty || getControl('password')?.touched)">
+        <span *ngIf="getControl('password')?.hasError('required')">
+          Campo Requerido
+        </span>
+          <span *ngIf="getControl('password')?.hasError('minlength')">
+            La contraseña debe tener al menos a 5 caracteres
+        </span>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button class="btn-block mt-3" color="primary" type="submit" [disabled]="this.loginForm.invalid">
+        Acceder
+      </button>
+      <button mat-button color="primary" (click)="register()" type="button">No tiene cuenta? Regístrese gratis</button>
+    </form>
+  </mat-card-content>
+</mat-card>

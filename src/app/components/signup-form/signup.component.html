@@ -1,0 +1,53 @@
+<form [formGroup]="signupForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title class="card-title">Sign up</mat-card-title>
+
+     <!-- <app-third-party-providers [isSigUp]="true"></app-third-party-providers>-->
+
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="full-width">
+        <mat-label>Email:</mat-label>
+        <input class='input' matInput type="email" formControlName="email">
+        <mat-icon class="check-done" *ngIf="!signupForm.controls['email'].errors; else errorBlock1" matSuffix>done
+        </mat-icon>
+        <ng-template #errorBlock1>
+          <mat-icon class="check-error" matSuffix >done</mat-icon>
+        </ng-template>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Password:</mat-label>
+        <input class='input' matInput type="password"
+               formControlName="password">
+        <mat-icon class="check-done" *ngIf="!signupForm.controls['password'].errors; else errorBlock2" matSuffix>done
+
+        </mat-icon>
+        <ng-template #errorBlock2>
+          <mat-icon class="check-error" matSuffix >done</mat-icon>
+        </ng-template>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="full-width">
+        <mat-label>Confirm Password:</mat-label>
+        <input class='input' matInput type="password"
+               formControlName="confirmPassword">
+        <mat-icon class="check-done" *ngIf="!signupForm.controls['confirmPassword'].errors; else errorBlock3" matSuffix>
+          done
+        </mat-icon>
+        <ng-template #errorBlock3>
+          <mat-icon class="check-error" matSuffix >done</mat-icon>
+        </ng-template>
+      </mat-form-field>
+
+      <mat-checkbox (change)="agree = !agree" color="warn">I agree with <a routerLink="terms">Terms and Conditions</a></mat-checkbox>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!(signupForm.valid && agree)">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+
+</form>
